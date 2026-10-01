@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for easy color theme adjustments */
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --accent-hover: #1f6feb;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header / Profile Section */
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+
+        .social-links a {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2 i {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--accent-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            background-color: var(--border-color);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Profile -->
+        <header>
+            <img src="https://via.placeholder.com/130" alt="Profile Picture" class="profile-img">
+            <h1>Your Name</h1>
+            <p class="tagline">Student & Aspiring Professional | Business Management & Accounting</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>
+                Hello! Welcome to my GitHub Pages portfolio. I am a dedicated student passionate about financial management, 
+                managerial accounting, and corporate governance. I enjoy leveraging data, analytical tools, and structured 
+                problem-solving to understand complex organizational systems and optimize decision-making.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2><i class="fas fa-code"></i> Core Competencies & Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-badge">Managerial Accounting</span>
+                <span class="skill-badge">Cost Allocation</span>
+                <span class="skill-badge">Financial Management</span>
+                <span class="skill-badge">Corporate Ethics</span>
+                <span class="skill-badge">Risk Assessment</span>
+                <span class="skill-badge">Data Analysis</span>
+                <span class="skill-badge">Excel / Spreadsheets</span>
+                <span class="skill-badge">Python / SQL</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2><i class="fas fa-folder-open"></i> Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Cost Allocation & Job Costing Analysis</h3>
+                        <p class="project-desc">
+                            A comparative case study evaluating manufacturing overhead allocation methods, proration across inventory balances, and relevant cost ranges.
+                        </p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/project-repo" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
+                        <a href="#" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> View Case</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Academic Risk Assessment Framework</h3>
+                        <p class="project-desc">
+                            A structured risk model quantifying potential failure modes and mitigation strategies for complex operational scenarios.
+                        </p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/project-repo" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Compliance & Governance Case Evaluation</h3>
+                        <p class="project-desc">
+                            An evaluation comparing values-based vs. compliance-based organizational models aligned with professional ethical standards.
+                        </p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/project-repo" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact / Footer -->
+        <footer>
+            <p>&copy; 2026 Your Name. Built with HTML & CSS. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
